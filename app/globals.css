@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.font-light {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-dark {
+  font-family: 'Roboto', sans-serif;
+}
