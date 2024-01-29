@@ -10,8 +10,8 @@ import {
   SiReact,
   SiNextdotjs,
 } from "react-icons/si";
-import FrontendTechnologies from "../components/FrontendTechnologies";
-import SoftSkills from "../components/SoftSkills";
+import FrontendTechnologies from "./FrontendTechnologies";
+import SoftSkills from "./SoftSkills";
 
 const ionColors = {
   SiHtml5: "#E44D26",

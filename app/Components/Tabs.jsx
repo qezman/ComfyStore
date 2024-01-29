@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Projects from "./Project";
 import About from "./About";
 import ContactForm from "./ContactForm";
 import Service from "./Service";
+import Project from "./Project";
 import SkillsCard from "./SkillsCard";
 
 const Tabs = () => {
@@ -61,7 +61,7 @@ const Tabs = () => {
       <div className="mt-4 overflow-x-auto">
         {activeTab === 1 && (
           <div>
-            <Projects />
+            <Project />
           </div>
         )}
         {activeTab === 2 && (
