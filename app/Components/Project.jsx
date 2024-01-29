@@ -1,6 +1,6 @@
+import ProjectCard from "./ProjectCard";
 
 
-import ProjectCard from "../components/ProjectCard";
 
 const Project = () => {
   const projects = [
