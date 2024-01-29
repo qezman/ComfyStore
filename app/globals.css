@@ -9,3 +9,39 @@
 .font-dark {
   font-family: 'Roboto', sans-serif;
 }
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.light {
+  color: black;
+  background-color: white;
+}
+
+.dark {
+  color: white;
+  background-color: rgb(17, 24, 39);
+}
+
+.dark .text-gray-950 {
+  color: #d1d5db;
+}
+
+.dark .text-gray-700 {
+  color: #afb7c1;
+}
+
+.dark .text-slate-800,
+.dark .text-gray-800{
+  color: #eae6e6;
+}
+
+.dark .border-blue-100{
+  border-color: rgb(17, 24, 39);
+}
+
+.dark .bg-white{
+  background-color: rgb(17, 24, 39);
+}

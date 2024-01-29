@@ -26,12 +26,12 @@ const Footer = () => {
             }
             />
           <FaGithub
-            className="text-xl cursor-pointer text-gray-950 hover:text-gray-700"
+            className="text-xl cursor-pointer text-gray-950 hover:text-gray-800"
             onClick={() => openLinkInNewTab("https://github.com/Adejokemi")}
           />
           <FaWhatsapp
-            className="text-xl cursor-pointer text-gray-950 hover:text-gray-700"
-            onClick={() => openLinkInNewTab("https://wa.me")}
+            className="text-xl cursor-pointer text-gray-950 hover:text-gray-800"
+            onClick={() => openLinkInNewTab("https://wa.me/+2349011814858")}
             />
         </div>
         </div>

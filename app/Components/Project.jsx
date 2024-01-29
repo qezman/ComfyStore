@@ -79,7 +79,7 @@ const Project = () => {
   ];
 
   return (
-    <div className="">
+    <div className="my-8">
       <div className="flex justify-center items-center">
         <div className="w-full">
           <h2 className="lg:text-3xl text-xl my-3">Featured and <span className="font-bold">Personal</span> Projects</h2>

@@ -69,7 +69,7 @@ const services = [
 const Service = () => {
   return (
     <section className="skills-section">
-      <div className="py-4">
+      <div className="my-10">
         {/* <h2 className="section-title text-3xl font-bold mb-8">Services</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {services.map((service, index) => (

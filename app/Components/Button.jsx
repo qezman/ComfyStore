@@ -23,7 +23,7 @@ const Button = ({
     }
   };
 
-  const buttonClass = `py-2 px-4 border rounded-3xl hover:opacity-80 focus:outline-none ${getVariantClass()} ${className}`;
+  const buttonClass = `py-2 px-4  rounded-3xl hover:opacity-80 focus:outline-none ${getVariantClass()} ${className}`;
 
   if (href) {
     return (

@@ -66,7 +66,7 @@ const SkillsCard = () => {
   const circumference = 2 * Math.PI * 120;
 
   return (
-    <main className="">
+    <main className="my-10">
       {/* <h2 className="text-2xl mb-6 font-medium">Technologies</h2> */}
       <section className="space-y-6 rounded-xl md:grid md:grid-cols-2 md:gap-4 sm:space-y-0">
         <div className="grid grid-cols-2 gap-6 lg:gap-0">

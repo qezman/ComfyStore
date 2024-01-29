@@ -6,10 +6,11 @@ const ContactForm = () => {
     <div className="lg:py-10 pb-12 w-5/6">
       <h2 className="text-3xl font-bold mb-3">Contact Me</h2>
       <p className="text-sm text-gray-700 mb-6">
-        I am always happy to hear from you
+        I am open to frelancing gigs or full-time opportunities. Feel free to
+        reach out to me.
       </p>
       <form form name="contact" method="POST" data-netlify="true">
-        <div className="mb-10">
+        <div className="mb-10 w-full">
           <label htmlFor="name" className="block mb-2 text-gray-800">
             Name
           </label>
