@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const ContactForm = () => {
   return (
-    <div className="lg:py-10 pb-12 w-5/6">
+    <div className="lg:py-10 pb-12 lg:w-5/6">
       <h2 className="text-3xl font-bold mb-3">Contact Me</h2>
       <p className="text-sm text-gray-700 mb-6">
         I am open to frelancing gigs or full-time opportunities. Feel free to
@@ -34,7 +34,7 @@ const ContactForm = () => {
             placeholder=" "
           />
         </div>
-        <div className="mb-10">
+        <div className="mb-5 lg:mb-10">
           <label htmlFor="message" className="block mb-2 text-gray-800">
             Message
           </label>

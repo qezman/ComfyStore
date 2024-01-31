@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import {
   FaDesktop,
@@ -69,13 +69,13 @@ const services = [
 const Service = () => {
   return (
     <section className="skills-section">
-      <div className="my-10">
+      <div className="lg:my-10 my-3">
         {/* <h2 className="section-title text-3xl font-bold mb-8">Services</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="service-card bg-slate-600 p-5 rounded-lg shadow-md transition-transform transform group hover:scale-105"
+              className="service-card bg-slate-600 p-5 rounded-lg shadow-md transition-transform transform group hover:scale-95"
             >
               <ServiceIcon icon={service.icon} />
               <h3 className="service-title text-xl text-pink-500 font-semibold mb-4">

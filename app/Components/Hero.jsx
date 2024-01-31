@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <>
       <div className=" relative">
-        <Image src={ks} alt="cover" className="w-full h-64 object-cover" />
+        <Image src={ks} alt="cover" className="w-full h-48 lg:h-64 object-cover" />
       </div>
       <div className="flex justify-between items-start mx-5 lg:mx-0">
         <div className="transform -translate-y-1/2 lg:translate-x-2/4 lg:w-36 lg:h-36 w-28 h-28 overflow-hidden rounded-full border-4 border-blue-100 relative ">

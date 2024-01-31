@@ -5,6 +5,14 @@ import ProjectCard from "./ProjectCard";
 const Project = () => {
   const projects = [
     {
+      liveLink: "https://med-ease.vercel.app/",
+      imageSrc: "https://i.imgur.com/4Zcr1Ag.png",
+      projectName: "MedEase",
+      description:
+        "MedEase is a medication management software, streamlining the process of tracking medications. With user-friendly features, it ensures medication adherence, providing an accessible platform for users to manage their health with ease.",
+      tools: "React.js, TailwindCss, Node.js",
+    },
+    {
       liveLink: "https://mpos.smarthivetechsolution.com/",
       imageSrc: "https://i.imgur.com/L20dM8K.png",
       projectName: "Mpos",
@@ -27,14 +35,6 @@ const Project = () => {
       description:
         "Sync is a church management software designed to streamline administrative tasks, enhance communication within religious communities. With intuitive features, it facilitates member engagement, event planning, and resource management, fostering a connected church environment.",
       tools: "React.js, TailwindCss, Laravel",
-    },
-    {
-      liveLink: "https://med-ease.vercel.app/",
-      imageSrc: "https://i.imgur.com/4Zcr1Ag.png",
-      projectName: "MedEase",
-      description:
-        "MedEase is a medication management software, streamlining the process of tracking medications. With user-friendly features, it ensures medication adherence, providing an accessible platform for users to manage their health with ease.",
-      tools: "React.js, TailwindCss, Node.js",
     },
     {
       liveLink: "https://omnifood-jonas-process.netlify.app/",
@@ -79,7 +79,7 @@ const Project = () => {
   ];
 
   return (
-    <div className="my-8">
+    <div className="lg:my-8">
       <div className="flex justify-center items-center">
         <div className="w-full">
           <h2 className="lg:text-3xl text-xl my-3">Featured and <span className="font-bold">Personal</span> Projects</h2>

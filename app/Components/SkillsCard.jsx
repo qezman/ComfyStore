@@ -66,18 +66,18 @@ const SkillsCard = () => {
   const circumference = 2 * Math.PI * 120;
 
   return (
-    <main className="my-10">
+    <main className="lg:my-10 my-4">
       {/* <h2 className="text-2xl mb-6 font-medium">Technologies</h2> */}
-      <section className="space-y-6 rounded-xl md:grid md:grid-cols-2 md:gap-4 sm:space-y-0">
-        <div className="grid grid-cols-2 gap-6 lg:gap-0">
+      <section className=" rounded-xl grid lg:grid-cols-2 gap-8 ">
+        <div className="grid px-2 lg:px-0 grid-cols-2 gap-6 lg:gap-8">
           {skillsData.map((skill) => (
             <button
               key={skill.title}
               onClick={() => setCurrentSkill(skill)}
-              className={`lg:px-4 py-2 text-xl text-gray-100 transition rounded-md h-14 lg:w-44 hover:bg-pink-600 ${
+              className={`lg:px-4 py-2 text-xl transition rounded-md h-14 lg:w-44 hover:text-white hover:bg-pink-600 ${
                 currentSkill.title === skill.title
-                  ? `font-bold ring-2 ring-gray-100 bg-pink-600`
-                  : "bg-gray-600"
+                  ? `font-bold ring-2 ring-gray-100 text-white bg-pink-600`
+                  : " border border-gray-800 border-solid"
               }`}
             >
               {skill.title}
@@ -86,7 +86,7 @@ const SkillsCard = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <svg className="transform -rotate-90 w-72 h-72">
+          <svg className="transform w-72 h-72">
             <circle
               cx="145"
               cy="145"
@@ -94,7 +94,7 @@ const SkillsCard = () => {
               stroke="currentColor"
               strokeWidth="30"
               fill="transparent"
-              className="text-gray-100"
+              className="text-slate-100"
             />
 
             <circle
@@ -115,7 +115,7 @@ const SkillsCard = () => {
               y="100"
               width="80"
               height="80"
-              className="text-gray-600 text-center"
+              className="text-gray-700 text-center"
             >
               {React.createElement(currentSkill.icon, {
                 size: "5em",
@@ -125,7 +125,7 @@ const SkillsCard = () => {
         </div>
       </section>
 
-      <div className="py-10 lg:pt-20">
+      <div className="py-10 lg:pt-20 lg:px-0 px-2">
         <div className="grid gap-8 lg:gap-0 lg:grid-cols-2">
           <FrontendTechnologies />
           <SoftSkills />
