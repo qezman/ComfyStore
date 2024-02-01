@@ -5,7 +5,7 @@ const Button = ({
   onClick,
   type = "button",
   variant = "primary",
-  href, // Use href instead of to
+  href,
   className,
 }) => {
   const getVariantClass = () => {

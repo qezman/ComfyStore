@@ -15,6 +15,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+button:focus {
+  outline: none;
+}
+
 .light {
   color: black;
   background-color: white;

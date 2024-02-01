@@ -68,14 +68,14 @@ const Project = () => {
         "Discover Dee Dee Hotel through our inviting website. Experience the epitome of hospitality with elegant room showcases, amenities, and seamless reservation options. Your perfect stay begins with a visit to our online home.",
       tools: "Html, CSS, Javascript",
     },
-    {
-      liveLink: "/",
-      imageSrc: "https://i.imgur.com/ptnIIwM.png",
-      projectName: "Cabash Exchange",
-      description:
-        "Cabash Exchange, a Pan-African payment platform, offers a swift, secure, and convenient solution for individuals and businesses to seamlessly send and receive money across Africa in their preferred currencies..",
-      tools: "React.js, TailwindCss, Laravel",
-    },
+    // {
+    //   liveLink: "/",
+    //   imageSrc: "https://i.imgur.com/ptnIIwM.png",
+    //   projectName: "Cabash Exchange",
+    //   description:
+    //     "Cabash Exchange, a Pan-African payment platform, offers a swift, secure, and convenient solution for individuals and businesses to seamlessly send and receive money across Africa in their preferred currencies..",
+    //   tools: "React.js, TailwindCss, Laravel",
+    // },
   ];
 
   return (

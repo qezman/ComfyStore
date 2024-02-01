@@ -1,4 +1,4 @@
-'use client';
+import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
@@ -7,9 +7,8 @@ const Footer = () => {
   };
 
   return (
-    <div>
-      <div className="py-4 ">
-        <div className="flex justify-center items-center">
+    <div className="py-4">
+      <div className="flex justify-center items-center">
         <div className="flex gap-4">
           <FaTwitter
             className="text-xl cursor-pointer text-gray-950 hover:text-gray-70000"
@@ -24,7 +23,7 @@ const Footer = () => {
                 "https://www.linkedin.com/in/omitogun-sherifat-ajoke/"
               )
             }
-            />
+          />
           <FaGithub
             className="text-xl cursor-pointer text-gray-950 hover:text-gray-800"
             onClick={() => openLinkInNewTab("https://github.com/Adejokemi")}
@@ -32,9 +31,11 @@ const Footer = () => {
           <FaWhatsapp
             className="text-xl cursor-pointer text-gray-950 hover:text-gray-800"
             onClick={() => openLinkInNewTab("https://wa.me/+2349011814858")}
-            />
+          />
         </div>
-        </div>
+      </div>
+      <div className="flex justify-center text-sm items-center mt-4 text-gray-600">
+        <p>© SherylCode {new Date().getFullYear()} </p>
       </div>
     </div>
   );

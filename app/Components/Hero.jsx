@@ -25,7 +25,7 @@ const Hero = () => {
           text="Download CV"
           variant="primary"
           className={"lg:mt-4 lg:mr-6 mt-2"}
-        />
+        ></Button>
       </div>
       <div className="mt-[-50px] z-10 mx-5 lg:mx-0">
         <Bio />
