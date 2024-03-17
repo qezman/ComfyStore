@@ -5,20 +5,20 @@ import ProjectCard from "./ProjectCard";
 const Project = () => {
   const projects = [
     {
+      liveLink: "/https://cabashexchange.netlify.app/",
+      imageSrc: "https://i.imgur.com/ptnIIwM.png",
+      projectName: "Cabash Exchange",
+      description:
+        "Cabash Exchange, a Pan-African payment platform, offers a swift, secure, and convenient solution for individuals and businesses to seamlessly send and receive money across Africa in their preferred currencies..",
+      tools: "React.js, TailwindCss, Laravel",
+    },
+    {
       liveLink: "https://med-ease.vercel.app/",
       imageSrc: "https://i.imgur.com/4Zcr1Ag.png",
       projectName: "MedEase",
       description:
         "MedEase is a medication management software, streamlining the process of tracking medications. With user-friendly features, it ensures medication adherence, providing an accessible platform for users to manage their health with ease.",
       tools: "React.js, TailwindCss, Node.js",
-    },
-    {
-      liveLink: "https://mpos.smarthivetechsolution.com/",
-      imageSrc: "https://i.imgur.com/L20dM8K.png",
-      projectName: "Mpos",
-      description:
-        "MPOS is a versatile business management software, offering comprehensive solutions for efficient operations. With features like inventory management and sales tracking, it empowers businesses to streamline processes and enhance overall productivity.",
-      tools: "React.js, Sass/Scss, Firebase",
     },
     {
       liveLink: "https://natours-hazel.vercel.app/",
@@ -29,12 +29,12 @@ const Project = () => {
       tools: "Html, Sass/Scss, Javascript",
     },
     {
-      liveLink: "https://sync-frontends.vercel.app/",
-      imageSrc: "https://i.imgur.com/ilAglB3.png",
-      projectName: "Sync",
+      liveLink: "/https://erhmz.com.ng/",
+      imageSrc: "https://i.imgur.com/Q3nFQmo.png",
+      projectName: "Erhmz Store",
       description:
-        "Sync is a church management software designed to streamline administrative tasks, enhance communication within religious communities. With intuitive features, it facilitates member engagement, event planning, and resource management, fostering a connected church environment.",
-      tools: "React.js, TailwindCss, Laravel",
+        "Welcome to Erhmz, your ultimate destination for premium footwear that caters to both men and women. Step into a world where style meets comfort, and every shoe tells a story of craftsmanship and quality.",
+      tools: "Wordpress, Woocommerce, Php",
     },
     {
       liveLink: "https://omnifood-jonas-process.netlify.app/",
@@ -68,14 +68,6 @@ const Project = () => {
         "Discover Dee Dee Hotel through our inviting website. Experience the epitome of hospitality with elegant room showcases, amenities, and seamless reservation options. Your perfect stay begins with a visit to our online home.",
       tools: "Html, CSS, Javascript",
     },
-    // {
-    //   liveLink: "/",
-    //   imageSrc: "https://i.imgur.com/ptnIIwM.png",
-    //   projectName: "Cabash Exchange",
-    //   description:
-    //     "Cabash Exchange, a Pan-African payment platform, offers a swift, secure, and convenient solution for individuals and businesses to seamlessly send and receive money across Africa in their preferred currencies..",
-    //   tools: "React.js, TailwindCss, Laravel",
-    // },
   ];
 
   return (
