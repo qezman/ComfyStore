@@ -29,7 +29,7 @@ const Project = () => {
       tools: "Html, Sass/Scss, Javascript",
     },
     {
-      liveLink: "/https://erhmz.com.ng/",
+      liveLink: "https://erhmz.com.ng/",
       imageSrc: "https://i.imgur.com/Q3nFQmo.png",
       projectName: "Erhmz Store",
       description:
