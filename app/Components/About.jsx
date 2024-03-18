@@ -46,13 +46,13 @@ const About = () => {
         <div className="my-10">
           <div className="flex justify-center lg:gap-4 items-center">
             <Image
-              src={"https://i.imgur.com/9n6h0Ou.jpg"}
+              src={"https://i.imgur.com/cm7hE0R.jpg"}
               width={140}
               height={140}
               className="w-full h-80 object-cover "
             />
             <Image
-              src={"https://i.imgur.com/Yv6tpux.jpg"}
+              src={"https://i.imgur.com/OwVIu9P.jpg"}
               width={140}
               height={140}
               className="w-full h-80 lg:block hidden object-cover "
