@@ -20,9 +20,19 @@ const About = () => {
             I'm Omitogun Sherifat Ajoke, a dedicated frontend developer with a
             burning passion for creating visually appealing and user-friendly
             websites that deliver exceptional user experiences. With a robust
-            foundation in HTML, CSS (Sass, Tailwind, Bootstrap), and JavaScript
-            (React, Next.JS), I find immense joy in translating design concepts
-            into fully functional and responsive interfaces.
+            foundation in HTML, CSS (including Sass, Tailwind, and Bootstrap),
+            and JavaScript (particularly with React and Next.js), I find immense
+            joy in translating design concepts into fully functional and
+            responsive interfaces.
+          </p>
+          <p className="text-slate-800 lg:text-base text-sm lg:tracking-wide lg:leading-7 leading-6 mb-5">
+            Additionally, my expertise extends to WordPress, where I leverage my
+            skills to develop dynamic websites and content management solutions.
+            My proficiency in WordPress adds versatility to my toolkit, allowing
+            me to craft bespoke websites tailored to clients' needs while
+            maintaining high standards of quality and usability. Through my
+            diverse skill set and dedication to frontend development, I strive
+            to create engaging digital experiences that leave a lasting impact.
           </p>
           <p className="text-slate-800   lg:text-base text-sm lg:tracking-wide lg:leading-7 leading-6">
             {" "}
