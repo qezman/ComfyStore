@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 const Project = () => {
   const projects = [
     {
-      liveLink: "/https://cabashexchange.netlify.app/",
+      liveLink: "https://cabashexchange.netlify.app/",
       imageSrc: "https://i.imgur.com/ptnIIwM.png",
       projectName: "Cabash Exchange",
       description:
