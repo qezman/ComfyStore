@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ".//globals.css";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import Layout from "./Components/Layout";
+import Footer from "./Components/Footer";
 
 const poppins = "Poppins, sans-serif";
+const title = "Sherifat Omitogun Ajoke | Frontend Developer From Lagos, Nigeria.";
+const description = "A Frontend developer";
 
 const RootLayout = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -13,6 +15,14 @@ const RootLayout = ({ children }) => {
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
+
+  useEffect(() => {
+    document.title = title; 
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description); 
+    }
+  }, []);
 
   return (
     <Layout>

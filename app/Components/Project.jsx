@@ -44,14 +44,14 @@ const Project = () => {
         "Omnifood's website is your gateway to a world of culinary convenience. Explore our AI-powered food delivery service online, browse a diverse menu, and enjoy a seamless ordering experience right from the comfort of your home.",
       tools: "Html, CSS, Javascript",
     },
-    {
-      liveLink: "https://sync-website-vumc.vercel.app/",
-      imageSrc: "https://i.imgur.com/4EqoOkV.png",
-      projectName: "Sync Website",
-      description:
-        "The Sync website is the online gateway to our powerful church management software. Explore comprehensive features, from member management to event planning. Connect with us seamlessly through our user-friendly website.",
-      tools: "Next.js, TailwindCss, Laravel",
-    },
+    // {
+    //   liveLink: "https://sync-website-vumc.vercel.app/",
+    //   imageSrc: "https://i.imgur.com/4EqoOkV.png",
+    //   projectName: "Sync Website",
+    //   description:
+    //     "The Sync website is the online gateway to our powerful church management software. Explore comprehensive features, from member management to event planning. Connect with us seamlessly through our user-friendly website.",
+    //   tools: "Next.js, TailwindCss, Laravel",
+    // },
     {
       liveLink: "https://emma-laundromat.netlify.app/",
       imageSrc: "https://i.imgur.com/zuedEFC.png",
