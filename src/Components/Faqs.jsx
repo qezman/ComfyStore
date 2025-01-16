@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaAngleDown } from "react-icons/fa";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const data = [
   {
@@ -40,15 +40,7 @@ const data = [
 ];
 
 const Faqs = () => {
-  const [openIndexes, setOpenIndexes] = useState([]);
-
-  const toggleAccordion = index => {
-    if (openIndexes.includes(index)) {
-      setOpenIndexes(openIndexes.filter(i => i !== index));
-    } else {
-      setOpenIndexes([...openIndexes, index]);
-    }
-  };
+  const [showInfo, setShowInfo] = useState(false);
 
   return (
     <section className="mt-20">
@@ -61,18 +53,14 @@ const Faqs = () => {
                 {item.question}
               </p>
               <button
-                onClick={() => toggleAccordion(index)}
-                className={`text-lg ${openIndexes.includes(index)
-                  ? "rotate-180"
-                  : ""}`}
+                onClick={() => setShowInfo(!showInfo)}
+                className={`text-lg`}
               >
-                <FaAngleDown />
+                {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
               </button>
             </div>
-            {openIndexes.includes(index) &&
-              <p className="mt-2 text-sm">
-                {item.answer}
-              </p>}
+
+            {showInfo && <p className="mt-2 text-sm">{item.answer}</p>}
           </aside>
         )}
       </aside>

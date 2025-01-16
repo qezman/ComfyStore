@@ -41,9 +41,11 @@ const Navbar = () => {
               Contacts
             </p>
           </Link>
-          <p className="text-sm font-semibold px-6 py-2 text-white rounded-xl bg-[#181c95cc] cursor-pointer lg:px-10">
-            Login
-          </p>
+          <Link href="/login">
+            <p className="text-sm font-semibold px-6 py-2 text-white rounded-xl bg-[#181c95cc] cursor-pointer lg:px-10">
+              Login
+            </p>
+          </Link>
         </aside>
       </article>
 

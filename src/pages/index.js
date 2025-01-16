@@ -1,12 +1,7 @@
+import SignUp from "../Components/SignUp";
 import Layout from "../Components/Layout";
-import HeroContent from "../Components/HeroContent";
 
-const Home = () => {
-  return (
-    <Layout>
-      <HeroContent />
-    </Layout>
-  );
+const signup = () => {
+  return <SignUp />;
 };
-
-export default Home;
+export default signup;

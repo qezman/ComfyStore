@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "push": "git remote add origin https://github.com/qezman/Qezman-sync.git"
   },
   "dependencies": {
     "@dotlottie/player-component": "^2.7.8",
