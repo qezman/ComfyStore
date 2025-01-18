@@ -48,7 +48,7 @@ const HeroContent = () => {
 
         <aside className="mt-8 lg:my-16 flex justify-center items-center flex-col">
           <p className="text-3xl">Supported by</p>
-          <div className="flex text-5xl text-gray-300 mt-3 gap-x-8">
+          <div className="flex text-3xl md:text-4xl lg:text-5xl text-gray-300 mt-3 gap-x-8">
             <FaWhatsapp />
             <FaCloud />
             <FaPaypal />

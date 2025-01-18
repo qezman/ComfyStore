@@ -148,6 +148,18 @@ const Login = () => {
             </p>
           )}
         </form>
+
+        <article>
+          <p className="mb-4 text-blue-900 text-center font-semibold">
+            Hint
+          </p>
+          <p className="mb-4 text-blue-500 text-center font-semibold">
+            <span className="font-normal">email: user@gmail.com</span>
+          </p>
+          <p className="mb-4 text-blue-500 text-center font-semibold">
+            <span className="font-normal">password: pass</span>
+          </p>
+        </article>
       </div>
     </div>
   );
