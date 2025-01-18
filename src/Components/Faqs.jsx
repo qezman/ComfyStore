@@ -58,7 +58,7 @@ const Faqs = () => {
         {data.map((item, index) => (
           <aside key={index} className="bg-violet-50 p-4 rounded-lg">
             <div className="flex justify-between items-start">
-              <p className="text-xl">{item.question}</p>
+              <p className="md:text-xl">{item.question}</p>
               {/* <button
                 onClick={() => toggleAccordion(index)}
                 className={`text-lg ${

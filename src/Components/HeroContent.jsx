@@ -42,12 +42,12 @@ const HeroContent = () => {
           </aside>
 
           <aside className="mt-6 lg:w-[50%]">
-            <Image src={videoImg} className="w-8/12 md:mx-auto" alt="alt" />
+            <Image src={videoImg} className="w-8/12 mx-auto" alt="alt" />
           </aside>
         </article>
 
         <aside className="mt-8 lg:my-16 flex justify-center items-center flex-col">
-          <p className="text-3xl">Supported by</p>
+          <p className="lg:text-3xl">Supported by</p>
           <div className="flex text-3xl md:text-4xl lg:text-5xl text-gray-300 mt-3 gap-x-8">
             <FaWhatsapp />
             <FaCloud />

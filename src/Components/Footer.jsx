@@ -1,6 +1,7 @@
 import { SiFacebook, SiGoogle, SiTwitter } from "react-icons/si";
 import Que from "../assets/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,23 +11,30 @@ const Footer = () => {
           <aside className="flex flex-col items-center md:items-start lg:col-span-1">
             <Image src={Que} alt="Que" width={50} height={50} />
             <p className="mt-3">
-              Welcome to Sync Innovative! Where the heart of your church beats stronger.
+              Welcome to Sync Innovative! Where the heart of your church beats
+              stronger.
             </p>
           </aside>
 
           <article className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm font-medium md:text-lg lg:col-span-3">
             <aside className="space-y-1">
               <p className="text-lg cursor-pointer">Company</p>
-              <p className="pt-2 cursor-pointer">About Us</p>
+              <Link href="/about">
+                <p className="pt-2 cursor-pointer">About Us</p>
+              </Link>
               <p className="cursor-pointer">Solutions</p>
-              <p className="cursor-pointer">Pricing</p>
+              <Link href={"/pricing"}>
+                <p className="cursor-pointer">Pricing</p>
+              </Link>
               <p className="cursor-pointer">Meet the Team</p>
             </aside>
 
             <aside className="space-y-1">
               <p className="text-lg">Resources</p>
               <p className="pt-2">Privacy</p>
-              <p>Contacts</p>
+              <Link href={"/contact"}>
+                <p>Contacts</p>
+              </Link>
               <p>FAQs</p>
             </aside>
 
@@ -42,8 +50,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <section>
-        {/* <p>Qezman {new Date.get}</p> */}
+      <section className="flex justify-center items-center mt-10">
+        <p>@ Qezman {new Date().getFullYear()}</p>
       </section>
     </section>
   );

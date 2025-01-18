@@ -36,7 +36,7 @@ export function Team({}) {
         {members.map(member =>
           <article
             key={member.name}
-            className="border border-slate-300 rounded-lg flex flex-col justify-center items-center w-48 md:w-56 lg:w-64 py-8"
+            className="border border-slate-300 rounded-lg flex flex-col justify-center items-center w-full md:w-56 lg:w-64 py-8"
           >
             <Image
               src={member.img}
