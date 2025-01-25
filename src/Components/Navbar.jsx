@@ -1,80 +1,239 @@
-"use client";
-
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { FaBars, FaCode, FaMoon, FaSun, FaTimes } from "react-icons/fa";
-import Qez from "../assets/logo.svg";
+import { FaBars, FaCartPlus, FaMoon, FaSun } from "react-icons/fa";
+import { useToggleBackground } from "../context/ToggleBackgroundContext";
 
 const Navbar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("");
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+  const { toggleBackground, handleToggleBackground } = useToggleBackground();
+
+  const handleDropdownToggle = () => {
+    setIsDropDownOpen((prev) => !prev);
   };
 
+  const handleItemClick = (item) => {
+    setActiveItem(item);
+    setIsDropDownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropDownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <section>
-      <article className="flex items-center justify-between px-7 py-5 border-b lg:px-16">
-        <Link href="/home">
-          <Image
-            src={Qez}
-            width={30}
-            height={30}
-            className="cursor-pointer"
-            alt="Qez"
-          />
-        </Link>
-        <FaBars onClick={toggleSidebar} className="cursor-pointer md:hidden" />
+    <div>
+      <nav
+        className={`${
+          toggleBackground ? "bg-gray-800" : ""
+        } text-gray-200 p-4 text-[11px] gap-x-4 flex justify-center md:justify-end md:px-8 md:text-[13px] items-center`}
+      >
+        <div className="lg:px-12 lg:px-0 lg:mx-auto">
+          <Link href="/signin" className="hover:underline">
+            Sign in / Guest
+          </Link>
+          <Link href="/signup" className="hover:underline">
+            Create Account
+          </Link>
+        </div>
+      </nav>
 
-        <aside className="hidden md:flex lg:text-xl lg:gap-x-6">
-          <p className="text-sm font-semibold px-4 py-2 cursor-pointer">
-            <Link href="/about">About Us</Link>
-          </p>
-          <Link href="/pricing">
-            <p className="text-sm font-semibold px-4 py-2 cursor-pointer">
-              Pricing
-            </p>
-          </Link>
-          <Link href={"/contact"}>
-            <p className="text-sm font-semibold px-4 py-2 cursor-pointer">
-              Contacts
-            </p>
-          </Link>
-          <Link href="/login">
-            <p className="text-sm font-semibold px-6 py-2 text-white rounded-xl bg-[#181c95cc] cursor-pointer lg:px-10">
-              Login
-            </p>
-          </Link>
-        </aside>
-      </article>
+      {/* Dropdown Menu */}
+      {isDropDownOpen && (
+        <div
+          className={`${
+            toggleBackground ? "bg-blue-50" : "bg-gray-800"
+          } absolute top-40 left-10 shadow-md rounded-lg p-4 w-48 z-50`}
+        >
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href="/"
+                onClick={() => handleItemClick("home")}
+                className={`block px-4 py-2 rounded-md ${
+                  activeItem === "home"
+                    ? toggleBackground
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-800"
+                    : toggleBackground
+                    ? "hover:bg-blue-500 text-gray-800"
+                    : "hover:bg-gray-600 text-gray-200"
+                }`}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                onClick={() => handleItemClick("about")}
+                className={`block px-4 py-2 rounded-md ${
+                  activeItem === "about"
+                    ? toggleBackground
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-800"
+                    : toggleBackground
+                    ? "hover:bg-blue-500 text-gray-800"
+                    : "hover:bg-gray-600 text-gray-200"
+                }`}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products"
+                onClick={() => handleItemClick("products")}
+                className={`block px-4 py-2 rounded-md ${
+                  activeItem === "products"
+                    ? toggleBackground
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-800"
+                    : toggleBackground
+                    ? "hover:bg-blue-500 text-gray-800"
+                    : "hover:bg-gray-600 text-gray-200"
+                }`}
+              >
+                Products
+              </Link>
+            </li>
 
-      {/* Sidebar */}
-      {sidebarOpen && (
-        <aside className="fixed top-0 left-0 w-64 h-full bg-gray-800 text-white shadow-lg z-50">
-          <div className="flex items-center justify-between px-4 py-5 border-b border-gray-700">
-            <Image src={Qez} width={30} height={30} className="" alt="Qez" />
-            <FaTimes onClick={toggleSidebar} className="cursor-pointer" />
-          </div>
-          <nav className="mt-5">
-            <ul>
-              <Link href="/about">
-                <p className="px-4 py-2 hover:bg-gray-700 cursor-pointer">About Us</p>
+            <li>
+              <Link
+                href="/cart"
+                onClick={() => handleItemClick("cart")}
+                className={`block px-4 py-2 rounded-md ${
+                  activeItem === "cart"
+                    ? toggleBackground
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-800"
+                    : toggleBackground
+                    ? "hover:bg-blue-500 text-gray-800"
+                    : "hover:bg-gray-600 text-gray-200"
+                }`}
+              >
+                Cart
               </Link>
-              <Link href="/pricing">
-                <p className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Pricing</p>
-              </Link>
-              <Link href="/contact">
-                <p className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Contact Us</p>
-              </Link>
-              <Link href="/login">
-                <p className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Log in</p>
-              </Link>
-            </ul>
-          </nav>
-        </aside>
+            </li>
+          </ul>
+        </div>
       )}
-    </section>
+
+      <nav
+        className={`${
+          toggleBackground
+            ? "bg-blue-50 text-gray-800"
+            : "bg-gray-800 text-blue-50"
+        } px-10 lg:px-20 xl:px-[330px] flex items-center justify-between py-2 text-xl 
+        `}
+      >
+        {/* Dropdown Toggle */}
+        <div
+          ref={dropdownRef}
+          className={`${
+            toggleBackground ? "hover:bg-blue-200" : "hover:bg-gray-700 "
+          } "block lg:hidden rounded-xl p-4 lg:w-[10%]"`}
+        >
+          <button onClick={handleDropdownToggle} className="text-xl">
+            <FaBars />
+          </button>
+        </div>
+
+        {/* Center Logo */}
+        <div className="hidden lg:block">
+          <p
+            className={`${
+              toggleBackground ? "bg-blue-600" : "bg-pink-500"
+            } text-white px-4 py-2 font-bold text-3xl rounded-xl`}
+          >
+            C
+          </p>
+        </div>
+
+        <div
+          className={`${
+            toggleBackground ? "text-gray-700" : "text-gray-100"
+          } hidden lg:flex lg:justify-center lg:items-center lg:gap-x-4 text-sm`}
+        >
+          <Link
+            href={"/"}
+            className={`${
+              toggleBackground
+                ? "hover:bg-gray-800 hover:text-white"
+                : "hover:bg-gray-100 hover:text-gray-700"
+            }  px-4 py-2 rounded-lg`}
+          >
+            Home
+          </Link>
+          <Link
+            href={"/about"}
+            className={`${
+              toggleBackground
+                ? "hover:bg-gray-800 hover:text-white"
+                : "hover:bg-gray-100 hover:text-gray-700"
+            }  px-4 py-2 rounded-lg`}
+          >
+            About
+          </Link>
+          <Link
+            href={"/products"}
+            className={`${
+              toggleBackground
+                ? "hover:bg-gray-800 hover:text-white"
+                : "hover:bg-gray-100 hover:text-gray-700"
+            }  px-4 py-2 rounded-lg`}
+          >
+            Products
+          </Link>
+          <Link
+            href={"/cart"}
+            className={`${
+              toggleBackground
+                ? "hover:bg-gray-800 hover:text-white"
+                : "hover:bg-gray-100 hover:text-gray-700"
+            }  px-4 py-2 rounded-lg`}
+          >
+            Cart
+          </Link>
+        </div>
+
+        {/* Right Icons */}
+        <div className="flex justify-center gap-x-6">
+          <button
+            className={`text-xl ${
+              toggleBackground ? "text-gray-700" : "text-gray-100"
+            }`}
+            onClick={handleToggleBackground}
+          >
+            {toggleBackground ? <FaMoon /> : <FaSun />}
+          </button>
+          <div
+            className={`flex items-center gap-x-2 relative ${
+              toggleBackground ? "text-gray-700" : "text-gray-100"
+            }`}
+          >
+            <FaCartPlus />
+            <span
+              className={`text-sm ${
+                toggleBackground ? "bg-blue-500" : "bg-pink-500"
+              } h-6 absolute bottom-2 left-4 text-center w-6 text-white rounded-xl`}
+            >
+              0
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 };
 

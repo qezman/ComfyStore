@@ -2,6 +2,23 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root, .main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .button:hover {
+  background-color: #4299e1; /* A darker hover blue for dark theme */
+}
+
+
 .font-light {
   font-family: 'Roboto', sans-serif;
 }
@@ -19,37 +36,28 @@ button:focus {
   outline: none;
 }
 
+/* Default (Light Theme) */
 .light {
-  color: black;
-  background-color: white;
+  background-color: #ffffff;
+  color: #1a202c; /* Tailwind's text-gray-800 equivalent */
 }
 
+.light .button {
+  background-color: #3182ce; /* Tailwind's bg-blue-500 equivalent */
+  color: #ffffff; /* White text */
+}
+
+.light .button:hover {
+  background-color: #2b6cb0; /* Tailwind's hover:bg-blue-600 equivalent */
+}
+
+/* Dark Theme */
 .dark {
-  color: white;
-  background-color: rgb(17, 24, 39);
+  background-color: #2d3748; /* Tailwind's bg-gray-800 equivalent */
+  color: #f7fafc; /* Tailwind's text-white equivalent */
 }
 
-.dark .text-gray-950 {
-  color: #d1d5db;
-}
-
-.dark .text-gray-700 {
-  color: #afb7c1;
-}
-
-.dark .text-slate-800,
-.dark .text-gray-800{
-  color: #eae6e6;
-}
-
-.dark .border-blue-100{
-  border-color: rgb(17, 24, 39);
-}
-
-.dark .border-gray-800{
-  border-color: #fff;
-}
-
-.dark .bg-white{
-  background-color: rgb(17, 24, 39);
+.dark .button {
+  background-color: #ed63d4; /* A lighter blue for dark theme */
+  color: #2d3748; /* Dark text for contrast */
 }

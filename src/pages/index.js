@@ -1,7 +1,12 @@
-import SignUp from "../Components/SignUp";
-import Layout from "../Components/Layout";
+// Pages/index.js
+import Home from "../Components/Home";
 
-const signup = () => {
-  return <SignUp />;
+const HomePage = () => {
+  return (
+    <section>
+      <Home />
+    </section>
+  );
 };
-export default signup;
+
+export default HomePage;

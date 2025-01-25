@@ -1,32 +1,28 @@
-// "use client"
+"use client";
 
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Herosection from "./Herosection";
+import Featured from "./Featured";
+import { useToggleBackground } from "../context/ToggleBackgroundContext";
 
-// import Head from "next/head";
+const Layout = ({ children }) => {
+  const { toggleBackground } = useToggleBackground();
+  const router = useRouter();
 
-// const Layout = ({ children }) => (
-//   <>
-//     <Head>
-//       <link
-//         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-//         rel="stylesheet"
-//       />
-//     </Head>
-//     {children}
-//   </>
-// );
-
-// export default Layout;
-
-const Layout = ({children}) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className={`${toggleBackground ? "light" : "dark"} main-container`}>
       <Navbar />
-      <main className="">
+      <main className="lg:w-11/12 lg:mx-auto xl:w-8/12">
+        {router.pathname === "/" && (
+          <>
+            <Herosection toggleBackground={toggleBackground} />
+            <Featured toggleBackground={toggleBackground} />
+          </>
+        )}
         {children}
       </main>
-      <Footer />
     </div>
   );
 };

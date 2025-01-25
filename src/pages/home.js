@@ -1,12 +1,11 @@
+import Home from "../Components/Home";
 import Layout from "../Components/Layout";
-import HeroContent from "../Components/HeroContent";
 
-const Home = () => {
+const home = () => {
   return (
     <Layout>
-      <HeroContent />
+      <Home/>
     </Layout>
   );
 };
-
-export default Home;
+export default home;

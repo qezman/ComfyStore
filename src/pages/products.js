@@ -1,12 +1,12 @@
-import About from "../Components/About";
+import Product from "../Components/Product";
 import { useToggleBackground } from "../context/ToggleBackgroundContext";
 
-const about = () => {
+const product = () => {
   const { toggleBackground } = useToggleBackground();
   return (
     // <Layout>
-      <About toggleBackground={toggleBackground} />
+      <Product toggleBackground={toggleBackground} />
     // </Layout>
   );
 };
-export default about;
+export default product;
