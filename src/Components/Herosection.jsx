@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Herosection = ({ toggleBackground }) => {
   return (
     <main className="mt-24 mx-10 lg:flex lg:items-center">
@@ -25,7 +27,7 @@ const Herosection = ({ toggleBackground }) => {
               : " bg-pink-500 hover:bg-pink-800"
           } text-gray-100 px-6  py-3 rounded-lg `}
         >
-          Our Products
+          <Link href={"/products"}>Our Products</Link>
         </button>
       </div>
 

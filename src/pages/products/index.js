@@ -1,5 +1,5 @@
-import Product from "../Components/Product";
-import { useToggleBackground } from "../context/ToggleBackgroundContext";
+import Product from "../../Components/Product";
+import { useToggleBackground } from "../../context/ToggleBackgroundContext";
 
 const product = () => {
   const { toggleBackground } = useToggleBackground();
