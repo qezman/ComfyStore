@@ -1,6 +1,15 @@
 import Link from "next/link";
+import useFetch from "./useFetch";
 
-const AllItems = ({ toggleBackground, layout, furnitureItems }) => {
+const AllItems = ({ toggleBackground, layout }) => {
+  const {
+    data: furnitureItems,
+    loading,
+    error,
+  } = useFetch("https://api.escuelajs.co/api/v1/categories/4/products");
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching data...{error}</p>;
   return (
     <section className="my-20">
       {/* Dynamic layout for items */}
@@ -13,28 +22,25 @@ const AllItems = ({ toggleBackground, layout, furnitureItems }) => {
       >
         {furnitureItems.map((furnitureItem) => (
           <Link href={`/products/${furnitureItem.id}`} key={furnitureItem.id}>
-            passHref
             <div
-              key={furnitureItem.id}
               className={`${
                 toggleBackground ? "bg-gray-50" : "bg-gray-700"
               } flex ${
                 layout === "grid"
-                  ? "flex-col"
-                  : "flex-row items-start  md:items-center justify-start"
+                  ? "flex-col h-full"
+                  : "flex-row items-start md:items-center justify-start"
               } hover:shadow-2xl shadow-lg rounded-xl p-4 cursor-pointer`}
             >
               {/* Item Image */}
               <img
                 className={`${
                   layout === "grid"
-                    ? "w-[330px] h-[250px] mb-4 rounded-2xl"
+                    ? "w-full h-64 mb-4 rounded-2xl object-cover"
                     : "w-40 h-32 rounded-lg"
                 }`}
-                src={furnitureItem.images}
-                alt={furnitureItem.name}
+                src={furnitureItem.images?.[0] || "/placeholder-image.jpg"} // Fallback image
+                alt={furnitureItem.name || "Product"}
               />
-              {furnitureItem.length}
               {/* Item Details */}
               <div
                 className={`${

@@ -2,8 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { FaBars, FaCartPlus, FaMoon, FaSun } from "react-icons/fa";
 import { useToggleBackground } from "../context/ToggleBackgroundContext";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
+  const { cartItems } = useCart();
   const [activeItem, setActiveItem] = useState("");
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -48,86 +50,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Dropdown Menu */}
-      {isDropDownOpen && (
-        <div
-          className={`${
-            toggleBackground ? "bg-blue-50" : "bg-gray-800"
-          } absolute top-40 left-10 shadow-md rounded-lg p-4 w-48 z-50`}
-        >
-          <ul className="space-y-2">
-            <li>
-              <Link
-                href="/"
-                onClick={() => handleItemClick("home")}
-                className={`block px-4 py-2 rounded-md ${
-                  activeItem === "home"
-                    ? toggleBackground
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-800"
-                    : toggleBackground
-                    ? "hover:bg-blue-500 text-gray-800"
-                    : "hover:bg-gray-600 text-gray-200"
-                }`}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                onClick={() => handleItemClick("about")}
-                className={`block px-4 py-2 rounded-md ${
-                  activeItem === "about"
-                    ? toggleBackground
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-800"
-                    : toggleBackground
-                    ? "hover:bg-blue-500 text-gray-800"
-                    : "hover:bg-gray-600 text-gray-200"
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products"
-                onClick={() => handleItemClick("products")}
-                className={`block px-4 py-2 rounded-md ${
-                  activeItem === "products"
-                    ? toggleBackground
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-800"
-                    : toggleBackground
-                    ? "hover:bg-blue-500 text-gray-800"
-                    : "hover:bg-gray-600 text-gray-200"
-                }`}
-              >
-                Products
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/cart"
-                onClick={() => handleItemClick("cart")}
-                className={`block px-4 py-2 rounded-md ${
-                  activeItem === "cart"
-                    ? toggleBackground
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-800"
-                    : toggleBackground
-                    ? "hover:bg-blue-500 text-gray-800"
-                    : "hover:bg-gray-600 text-gray-200"
-                }`}
-              >
-                Cart
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+     
 
       <nav
         className={`${
@@ -138,15 +61,96 @@ const Navbar = () => {
         `}
       >
         {/* Dropdown Toggle */}
-        <div
-          ref={dropdownRef}
-          className={`${
-            toggleBackground ? "hover:bg-blue-200" : "hover:bg-gray-700 "
-          } "block lg:hidden rounded-xl p-4 lg:w-[10%]"`}
-        >
-          <button onClick={handleDropdownToggle} className="text-xl">
+        <div ref={dropdownRef} className="relative lg:hidden">
+          {/* Toggle Button */}
+          <button
+            onClick={handleDropdownToggle}
+            className={`text-xl ${
+              toggleBackground ? "hover:bg-blue-200" : "hover:bg-gray-700"
+            } p-4 rounded-xl`}
+          >
             <FaBars />
           </button>
+
+          {/* Working Dropdown Menu */} 
+          {isDropDownOpen && (
+            <div
+              className={`absolute top-full left-0 mt-2 shadow-md rounded-lg w-48 z-50 ${
+                toggleBackground ? "bg-blue-50" : "bg-gray-800"
+              }`}
+            >
+              <ul className="space-y-2 p-4">
+                <li>
+                  <Link
+                    href="/"
+                    onClick={() => handleItemClick("home")}
+                    className={`text-sm block px-4 py-2 rounded-md ${
+                      activeItem === "home"
+                        ? toggleBackground
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-800"
+                        : toggleBackground
+                        ? "hover:bg-blue-500 text-gray-800"
+                        : "hover:bg-gray-600 text-gray-200"
+                    }`}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    onClick={() => handleItemClick("about")}
+                    className={`text-sm block px-4 py-2 rounded-md ${
+                      activeItem === "about"
+                        ? toggleBackground
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-800"
+                        : toggleBackground
+                        ? "hover:bg-blue-500 text-gray-800"
+                        : "hover:bg-gray-600 text-gray-200"
+                    }`}
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products"
+                    onClick={() => handleItemClick("products")}
+                    className={`text-sm block px-4 py-2 rounded-md ${
+                      activeItem === "products"
+                        ? toggleBackground
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-800"
+                        : toggleBackground
+                        ? "hover:bg-blue-500 text-gray-800"
+                        : "hover:bg-gray-600 text-gray-200"
+                    }`}
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/cart"
+                    onClick={() => handleItemClick("cart")}
+                    className={`text-sm block px-4 py-2 rounded-md ${
+                      activeItem === "cart"
+                        ? toggleBackground
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-800"
+                        : toggleBackground
+                        ? "hover:bg-blue-500 text-gray-800"
+                        : "hover:bg-gray-600 text-gray-200"
+                    }`}
+                  >
+                    Cart
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Center Logo */}
@@ -217,7 +221,8 @@ const Navbar = () => {
           >
             {toggleBackground ? <FaMoon /> : <FaSun />}
           </button>
-          <div
+          <Link
+          href={"/cart"}
             className={`flex items-center gap-x-2 relative ${
               toggleBackground ? "text-gray-700" : "text-gray-100"
             }`}
@@ -228,9 +233,12 @@ const Navbar = () => {
                 toggleBackground ? "bg-blue-500" : "bg-pink-500"
               } h-6 absolute bottom-2 left-4 text-center w-6 text-white rounded-xl`}
             >
-              0
+              {cartItems.length}
             </span>
-          </div>
+          </Link>
+
+
+
         </div>
       </nav>
     </div>

@@ -62,6 +62,13 @@ const ProductDetails = ({}) => {
   };
 
   const handleAddToCart = () => {
+    const productToAdd = {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.images,
+      quantity: 1,
+    };
     addToCart(product);
     toast.success(`${product.title} has been added to your cart!`, {
       position: "top-right",
@@ -72,6 +79,7 @@ const ProductDetails = ({}) => {
       draggable: true,
       progress: undefined,
     });
+    console.log("Product added to cart", productToAdd);
   };
 
   return (
@@ -110,7 +118,7 @@ const ProductDetails = ({}) => {
                 toggleBackground ? "text-gray-600" : "text-gray-100"
               } mt-3 text-xl`}
             >
-              ${product.price}
+              ${product.price}.99
             </p>
             <p
               className={`${

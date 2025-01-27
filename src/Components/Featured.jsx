@@ -1,19 +1,17 @@
 import React from "react";
-// import Bed from "/Bed.jpeg";
-// import CoffeeTable from "/CoffeeTable.jpeg";
-// import Lamp from "/Lamp.jpeg";
+import useFetch from "./useFetch";
 
 const Featured = ({ toggleBackground }) => {
-  const FeaturedData = [
-    { id: 1, image: "/Lamp.jpeg", title: "Avant-Garde Lamp", price: "$179.99" },
-    {
-      id: 2,
-      image: "/CoffeeTable.jpeg",
-      title: "Coffee Table",
-      price: "$179.99",
-    },
-    { id: 3, image: "/Bed.jpeg", title: "Comfy Bed", price: "$129.99" },
-  ];
+  const {
+    data: shoeItems,
+    loading,
+    error,
+  } = useFetch("https://api.escuelajs.co/api/v1/categories/4/products");
+
+  const featuredItems = shoeItems.slice(0, 3);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching data...{error}</p>;
   return (
     <section className="my-20 mx-10 text-gray-800">
       <h1
@@ -29,26 +27,28 @@ const Featured = ({ toggleBackground }) => {
         } mb-4 mt-4`}
       />
       <section className="space-y-8 md:space-y-0 mt-12  md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-6 lg:grid-cols-3">
-        {FeaturedData.map((item) => {
-          return (
-            <div
-              className={`px-4 py-10 flex flex-col justify-center items-center ${
-                toggleBackground ? "light" : "dark"
-              } shadow-lg delay-300 duration-500 hover:shadow-2xl rounded-xl`}
+        {featuredItems.map((item) => (
+          <div
+            key={item.id}
+            className={`px-4 py-10 flex flex-col justify-center items-center ${
+              toggleBackground ? "light" : "dark"
+            } shadow-lg delay-300 duration-500 hover:shadow-2xl rounded-xl`}
+          >
+            <img
+              src={item.images?.[0] || "/placeholder-image.jpg"}
+              alt={item.title}
+              className="rounded-2xl w-72 h-72"
+            />
+            <p className="text-lg font-bold py-3 tracking-wide">{item.title}</p>
+            <p
+              className={`${
+                toggleBackground ? "text-gray-700" : "text-violet-300"
+              }`}
             >
-              <img
-                key={item.id}
-                src={item.image}
-                alt={item.title}
-                className="rounded-2xl w-72 h-72"
-              />
-              <p className="text-lg font-bold py-3 tracking-wide">
-                {item.title}
-              </p>
-              <p className={`${toggleBackground ? "text-gray-700" : "text-violet-300"}`}>{item.price}</p>
-            </div>
-          );
-        })}
+              ${item.price.toLocaleString()}
+            </p>
+          </div>
+        ))}
       </section>
     </section>
   );
